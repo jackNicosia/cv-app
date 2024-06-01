@@ -4,8 +4,9 @@ div.cv-page {
   background-color: rgb(255, 255, 255);
   margin-top: 10px;
   color: black;
-  grid-template-rows: 30% 30% 30%;
-  grid-template-columns: 65% 35%;
+  grid-template-rows: 20% 20% 20%;
+  grid-template-columns: 60% 30%;
+  gap: 10%;
 }
 
 .cv-page p {
@@ -18,4 +19,43 @@ div.cv-page {
   font-size: 50px;
   margin-left: 20px;
   margin-top: 20px;
+}
+
+.contact {
+  margin-top: 35px;
+}
+.contact p {
+  margin-bottom: 15px;
+}
+
+.name-header,
+.education-section,
+.work-history {
+  margin-left: 20px;
+}
+
+.work-history {
+  grid-row: 3;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.school-name,
+.job-name {
+  font-size: 20px;
+  font-weight: bolder;
+  list-style: disclosure-open;
+}
+
+.degree-li,
+.year-li,
+.position-li,
+.dates-li {
+  margin-left: 10px;
 }

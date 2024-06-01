@@ -50,6 +50,16 @@ export default function Personal({ info, handleInputChange }) {
           onChange={handleInputChange}
         />
       </label>
+      <label>
+        Github:
+        <input
+          type="text"
+          className="input-field"
+          name="link"
+          value={info.link}
+          onChange={handleInputChange}
+        />
+      </label>
     </div>
   );
 }

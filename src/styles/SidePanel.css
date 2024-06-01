@@ -1,12 +1,13 @@
 div.sidePanel {
   grid-column: 1/2;
   background-color: rgb(119, 110, 240);
-  width: 20vw;
+  width: 30vw;
   height: 95vh;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
 }
 
 div.personal,

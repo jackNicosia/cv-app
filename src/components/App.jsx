@@ -14,6 +14,7 @@ function App() {
     dates: "",
     about: "",
     location: "",
+    link: "",
   });
 
   const handleInputChange = (e) => {
