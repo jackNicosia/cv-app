@@ -1,0 +1,21 @@
+div.cv-page {
+  display: grid;
+  width: 45vw;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+  color: black;
+  grid-template-rows: 30% 30% 30%;
+  grid-template-columns: 65% 35%;
+}
+
+.cv-page p {
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.cv-page h1 {
+  margin: 0;
+  font-size: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
