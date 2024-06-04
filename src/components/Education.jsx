@@ -8,6 +8,7 @@ export default function Education({ info, handleInputChange }) {
           name="school"
           value={info.school}
           onChange={handleInputChange}
+          className="input-field"
         />
       </label>
       <label>
@@ -17,6 +18,7 @@ export default function Education({ info, handleInputChange }) {
           name="degree"
           value={info.degree}
           onChange={handleInputChange}
+          className="input-field"
         />
       </label>
       <label>
@@ -26,6 +28,7 @@ export default function Education({ info, handleInputChange }) {
           name="year"
           value={info.year}
           onChange={handleInputChange}
+          className="input-field"
         />
       </label>
     </div>

@@ -9,6 +9,4 @@ Currently, two official plugins are available:
 
 http://localhost:5173/
 
-ADD PROPS
-
-ADD HANDLER FUNCTION TO DEAL WITH INPUT
+Make it so that when any input is typed into all of the placeholder text in the cvpage goes away. so that the placeholder is only for preview.

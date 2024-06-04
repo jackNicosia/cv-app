@@ -34,3 +34,14 @@ function App() {
 }
 
 export default App;
+
+/* 
+
+To Do 
+------
+add email/phone/location/link icons 
+
+
+
+
+*/

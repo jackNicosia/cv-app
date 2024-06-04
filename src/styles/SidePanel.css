@@ -12,7 +12,8 @@ div.sidePanel {
 
 div.personal,
 div.education,
-div.work {
+div.work,
+div.skills {
   width: 15vw;
   display: flex;
   flex-direction: column;

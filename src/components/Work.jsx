@@ -8,6 +8,7 @@ export default function Education({ info, handleInputChange }) {
           name="job"
           value={info.job}
           onChange={handleInputChange}
+          className="input-field"
         />
       </label>
       <label>
@@ -17,6 +18,7 @@ export default function Education({ info, handleInputChange }) {
           name="position"
           value={info.position}
           onChange={handleInputChange}
+          className="input-field"
         />
       </label>
       <label>
@@ -26,6 +28,7 @@ export default function Education({ info, handleInputChange }) {
           name="dates"
           value={info.dates}
           onChange={handleInputChange}
+          className="input-field"
         />
       </label>
     </div>

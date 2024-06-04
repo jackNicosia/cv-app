@@ -19,10 +19,12 @@ div.cv-page {
   font-size: 50px;
   margin-left: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .contact {
   margin-top: 35px;
+  margin-right: 20px;
 }
 .contact p {
   margin-bottom: 15px;
@@ -38,8 +40,8 @@ div.cv-page {
   grid-row: 3;
 }
 
-h2 {
-  text-decoration: underline;
+.cv-page h2 {
+  border-bottom: 1.2px solid rgb(0, 0, 0);
 }
 
 ul {
@@ -58,4 +60,13 @@ ul {
 .position-li,
 .dates-li {
   margin-left: 10px;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+img {
+  width: 20px;
+  margin-right: 10px;
 }
