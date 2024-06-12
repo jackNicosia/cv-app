@@ -10,8 +10,13 @@ function App() {
     school: "",
     degree: "",
     year: "",
-    job: "",
-    dates: "",
+    jobs: [
+      {
+        job: "",
+        position: "",
+        dates: "",
+      },
+    ],
     about: "",
     location: "",
     link: "",
@@ -24,6 +29,26 @@ function App() {
       ...prevInfo,
       [name]: value,
     }));
+  };
+
+  const handleJobChange = (index, e) => {
+    const { name, value } = e.target;
+    const jobs = [...info.jobs];
+    jobs[index][name] = value;
+    setInfo({ ...info, jobs });
+  };
+
+  const addJob = () => {
+    setInfo((prevInfo) => ({
+      ...prevInfo,
+      jobs: [...prevInfo.jobs, { job: "", position: "", dates: "" }],
+    }));
+  };
+
+  const deleteJob = (index) => {
+    const jobs = [...info.jobs];
+    jobs.splice(index, 1);
+    setInfo({ ...info, jobs });
   };
 
   const handleSkillChange = (index, e) => {
@@ -56,6 +81,9 @@ function App() {
       <SidePanel
         info={info}
         handleInputChange={handleInputChange}
+        handleJobChange={handleJobChange}
+        addJob={addJob}
+        deleteJob={deleteJob}
         handleSkillChange={handleSkillChange}
         addSkill={addSkill}
         deleteSkill={deleteSkill}

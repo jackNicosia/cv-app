@@ -7,6 +7,9 @@ import Skills from "./Skills";
 export default function SidePanel({
   info,
   handleInputChange,
+  handleJobChange,
+  addJob,
+  deleteJob,
   handleSkillChange,
   addSkill,
   deleteSkill,
@@ -18,7 +21,18 @@ export default function SidePanel({
       <h2>Education</h2>
       <Education info={info} handleInputChange={handleInputChange} />
       <h2>Work History</h2>
-      <Work info={info} handleInputChange={handleInputChange} />
+      {info.jobs.map((job, index) => (
+        <Work
+          key={index}
+          job={job}
+          index={index}
+          handleJobChange={handleJobChange}
+          deleteJob={deleteJob}
+        />
+      ))}
+      <button type="button" onClick={addJob}>
+        Add Job{" "}
+      </button>
       <h2>Technical skills</h2>
       <Skills
         info={info}

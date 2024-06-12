@@ -1,4 +1,4 @@
-export default function Education({ info, handleInputChange }) {
+export default function Job({ job, index, handleJobChange, deleteJob }) {
   return (
     <div className="work">
       <label>
@@ -6,8 +6,8 @@ export default function Education({ info, handleInputChange }) {
         <input
           type="text"
           name="job"
-          value={info.job}
-          onChange={handleInputChange}
+          value={job.job}
+          onChange={(e) => handleJobChange(index, e)}
           className="input-field"
         />
       </label>
@@ -16,8 +16,8 @@ export default function Education({ info, handleInputChange }) {
         <input
           type="text"
           name="position"
-          value={info.position}
-          onChange={handleInputChange}
+          value={job.position}
+          onChange={(e) => handleJobChange(index, e)}
           className="input-field"
         />
       </label>
@@ -26,11 +26,14 @@ export default function Education({ info, handleInputChange }) {
         <input
           type="text"
           name="dates"
-          value={info.dates}
-          onChange={handleInputChange}
+          value={job.dates}
+          onChange={(e) => handleJobChange(index, e)}
           className="input-field"
         />
       </label>
+      <button type="button" onClick={() => deleteJob(index)}>
+        x
+      </button>
     </div>
   );
 }

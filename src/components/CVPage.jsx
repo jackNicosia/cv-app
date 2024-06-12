@@ -30,9 +30,19 @@ export default function CVPage({ info }) {
         <div className="work-history">
           <h2>Work History</h2>
           <ul>
-            <li className="job-name">{info.job || "Lakeview Valet"}</li>
-            <li className="position-li">{info.position || "Valet"}</li>
-            <li className="dates-li">{info.dates || "March 2014 - Present"}</li>
+            {info.jobs.map((job, index) => (
+              <li key={index}>{job.job || "Lakeview Valet"}</li>
+            ))}
+            {info.jobs.map((position, index) => (
+              <li className="position-li" key={index}>
+                {position.position || "Valet"}
+              </li>
+            ))}
+            {info.jobs.map((dates, index) => (
+              <li className="dates-li" key={index}>
+                {dates.dates || "March 2014 - Present"}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
