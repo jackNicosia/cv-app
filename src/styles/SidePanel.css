@@ -63,3 +63,7 @@ input {
 .skill-input button:hover {
   background-color: rgb(85, 235, 25);
 }
+
+.add-job {
+  margin-top: 20px;
+}

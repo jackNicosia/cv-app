@@ -28,11 +28,13 @@ export default function SidePanel({
           index={index}
           handleJobChange={handleJobChange}
           deleteJob={deleteJob}
+          addJob={addJob}
         />
       ))}
-      <button type="button" onClick={addJob}>
+      <button className="add-job" type="button" onClick={addJob}>
         Add Job{" "}
       </button>
+
       <h2>Technical skills</h2>
       <Skills
         info={info}
