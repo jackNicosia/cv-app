@@ -1,22 +1,31 @@
-export default function Skills({ info, handleInputChange }) {
+export default function Skills({
+  info,
+  handleSkillChange,
+  addSkill,
+  deleteSkill,
+}) {
   return (
     <div className="skills">
-      <label>
-        Skill:
-        <input
-          type="text"
-          name="skill"
-          value={info.skill}
-          onChange={handleInputChange}
-          className="input-field"
-        />
-      </label>
-      <button>Add Skill</button>
+      {info.skills.map((skill, index) => (
+        <div key={index} className="skill-input">
+          <button type="button" onClick={() => deleteSkill(index)}>
+            X
+          </button>
+          <label>
+            Skill:
+            <input
+              type="text"
+              name="skill"
+              value={skill.skill}
+              onChange={(e) => handleSkillChange(index, e)}
+              className="input-field"
+            />
+          </label>
+        </div>
+      ))}
+      <button type="button" onClick={addSkill}>
+        Add Skill
+      </button>
     </div>
   );
 }
-
-/*
-
-Add function to button so that multiple skills can be added.
-*/

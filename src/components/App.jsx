@@ -15,6 +15,7 @@ function App() {
     about: "",
     location: "",
     link: "",
+    skills: [{ skill: "" }],
   });
 
   const handleInputChange = (e) => {
@@ -25,9 +26,40 @@ function App() {
     }));
   };
 
+  const handleSkillChange = (index, e) => {
+    const { name, value } = e.target;
+    const newSkills = [...info.skills];
+    newSkills[index][name] = value;
+    setInfo((prevInfo) => ({
+      ...prevInfo,
+      skills: newSkills,
+    }));
+  };
+
+  const addSkill = () => {
+    setInfo((prevInfo) => ({
+      ...prevInfo,
+      skills: [...prevInfo.skills, { skill: "" }],
+    }));
+  };
+
+  const deleteSkill = (index) => {
+    const newSkills = info.skills.filter((_, i) => i !== index);
+    setInfo((prevInfo) => ({
+      ...prevInfo,
+      skills: newSkills,
+    }));
+  };
+
   return (
     <div className="appDiv">
-      <SidePanel info={info} handleInputChange={handleInputChange} />
+      <SidePanel
+        info={info}
+        handleInputChange={handleInputChange}
+        handleSkillChange={handleSkillChange}
+        addSkill={addSkill}
+        deleteSkill={deleteSkill}
+      />
       <CVPage info={info} />
     </div>
   );

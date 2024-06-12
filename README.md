@@ -8,5 +8,3 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 http://localhost:5173/
-
-Make it so that when any input is typed into all of the placeholder text in the cvpage goes away. so that the placeholder is only for preview.
