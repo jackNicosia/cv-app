@@ -23,12 +23,17 @@ function App() {
     skills: [{ skill: "" }],
   });
 
+  const [isModified, setIsModified] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setInfo((prevInfo) => ({
       ...prevInfo,
       [name]: value,
     }));
+    if (!isModified) {
+      setIsModified(true);
+    }
   };
 
   const handleJobChange = (index, e) => {
@@ -36,6 +41,9 @@ function App() {
     const jobs = [...info.jobs];
     jobs[index][name] = value;
     setInfo({ ...info, jobs });
+    if (!isModified) {
+      setIsModified(true);
+    }
   };
 
   const addJob = () => {
@@ -43,12 +51,18 @@ function App() {
       ...prevInfo,
       jobs: [...prevInfo.jobs, { job: "", position: "", dates: "" }],
     }));
+    if (!isModified) {
+      setIsModified(true);
+    }
   };
 
   const deleteJob = (index) => {
     const jobs = [...info.jobs];
     jobs.splice(index, 1);
     setInfo({ ...info, jobs });
+    if (!isModified) {
+      setIsModified(true);
+    }
   };
 
   const handleSkillChange = (index, e) => {
@@ -59,6 +73,9 @@ function App() {
       ...prevInfo,
       skills: newSkills,
     }));
+    if (!isModified) {
+      setIsModified(true);
+    }
   };
 
   const addSkill = () => {
@@ -66,6 +83,9 @@ function App() {
       ...prevInfo,
       skills: [...prevInfo.skills, { skill: "" }],
     }));
+    if (!isModified) {
+      setIsModified(true);
+    }
   };
 
   const deleteSkill = (index) => {
@@ -74,6 +94,9 @@ function App() {
       ...prevInfo,
       skills: newSkills,
     }));
+    if (!isModified) {
+      setIsModified(true);
+    }
   };
 
   return (
@@ -88,7 +111,7 @@ function App() {
         addSkill={addSkill}
         deleteSkill={deleteSkill}
       />
-      <CVPage info={info} />
+      <CVPage info={info} isModified={isModified} />
     </div>
   );
 }
@@ -99,8 +122,14 @@ export default App;
 
 To Do 
 ------
-add email/phone/location/link icons 
+create max width for cv-page text
 
+
+delete all preview text when any input box is typed into
+
+  only show associated icons if input is typed into
+
+  style slide bar
 
 
 

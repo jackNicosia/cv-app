@@ -4,27 +4,28 @@ import phoneIcon from "../assets/smartphone-call.png";
 import locationIcon from "../assets/location.png";
 import githubIcon from "../assets/github(1).png";
 
-export default function CVPage({ info }) {
+export default function CVPage({ info, isModified }) {
   return (
     <div className="cv-page">
       <div className="left-section">
         <div className="name-header">
-          <h1 className="name">{info.name || "John Doe"}</h1>
+          <h1 className="name">{isModified ? info.name : "John Doe"}</h1>
           <p>
-            {info.about ||
-              "I am a passionate computer science student with a strong interest in software development, data analysis, and AI. I enjoy solving complex problems and working on innovative projects."}{" "}
+            {isModified
+              ? info.about
+              : "I am a passionate computer science student with a strong interest in software development, data analysis, and AI. I enjoy solving complex problems and working on innovative projects."}{" "}
           </p>
         </div>
         <div className="education-section">
           <h2>Education</h2>
           <ul>
             <li className="school-name">
-              {info.school || "Krelboyne University"}
+              {isModified ? info.school : "Krelboyne University"}
             </li>
             <li className="degree-li">
-              {info.degree || "Master's Degree in Computer Science"}
+              {isModified ? info.degree : "Master's Degree in Computer Science"}
             </li>
-            <li className="year-li">{info.year || "2014-2018"}</li>
+            <li className="year-li">{isModified ? info.year : "2014-2018"}</li>
           </ul>
         </div>
         <div className="work-history">
@@ -35,11 +36,11 @@ export default function CVPage({ info }) {
                 <li key={index}>{job.job || "Lakeview Valet"}</li>
 
                 <li className="position-li" key={index}>
-                  {job.position || "Valet"}
+                  {isModified ? job.position : "Valet"}
                 </li>
 
                 <li className="dates-li" key={index}>
-                  {job.dates || "March 2014 - Present"}
+                  {isModified ? job.dates : "March 2014 - Present"}
                 </li>
               </div>
             ))}
@@ -50,20 +51,20 @@ export default function CVPage({ info }) {
         <div className="contact">
           <p className="email">
             <img src={emailIcon} alt="Email" />
-            {info.email || "johndoe@aol.com"}
+            {isModified ? info.email : "johndoe@aol.com"}
           </p>
           <p className="phone">
             <img src={phoneIcon} alt="Phone" />
-            {info.phone || "572-108-4722"}
+            {isModified ? info.phone : "572-108-4722"}
           </p>
           <p>
             <img src={locationIcon} alt="Location" />
-            {info.location || "South Lake Tahoe, California"}
+            {isModified ? info.location : "South Lake Tahoe, California"}
           </p>
           <p>
             <img src={githubIcon} alt="GitHub" />
             <a href={info.link}>
-              {info.link || "https://github.com/jackNicosia"}
+              {isModified ? info.link : "https://github.com/jackNicosia"}
             </a>
           </p>
         </div>
@@ -71,7 +72,7 @@ export default function CVPage({ info }) {
           <h3>Technical Skills</h3>
           <ul>
             {info.skills.map((skill, index) => (
-              <li key={index}>{skill.skill || "Javascript"}</li>
+              <li key={index}>{isModified ? skill.skill : "Javascript"}</li>
             ))}
           </ul>
         </div>
