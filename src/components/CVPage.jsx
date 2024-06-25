@@ -33,7 +33,9 @@ export default function CVPage({ info, isModified }) {
           <ul>
             {info.jobs.map((job, index) => (
               <div key={index} className="job-entry">
-                <li key={index}>{job.job || "Lakeview Valet"}</li>
+                <li key={index} className="job-name">
+                  {isModified ? job.job : "Lakeview Valet"}
+                </li>
 
                 <li className="position-li" key={index}>
                   {isModified ? job.position : "Valet"}
@@ -49,24 +51,32 @@ export default function CVPage({ info, isModified }) {
       </div>
       <div className="right-section">
         <div className="contact">
-          <p className="email">
-            <img src={emailIcon} alt="Email" />
-            {isModified ? info.email : "johndoe@aol.com"}
-          </p>
-          <p className="phone">
-            <img src={phoneIcon} alt="Phone" />
-            {isModified ? info.phone : "572-108-4722"}
-          </p>
-          <p>
-            <img src={locationIcon} alt="Location" />
-            {isModified ? info.location : "South Lake Tahoe, California"}
-          </p>
-          <p>
-            <img src={githubIcon} alt="GitHub" />
-            <a href={info.link}>
-              {isModified ? info.link : "https://github.com/jackNicosia"}
-            </a>
-          </p>
+          {info.email && (
+            <p className="email">
+              <img src={emailIcon} alt="Email" />
+              {isModified ? info.email : "johndoe@aol.com"}
+            </p>
+          )}
+          {info.phone && (
+            <p className="phone">
+              <img src={phoneIcon} alt="Phone" />
+              {isModified ? info.phone : "572-108-4722"}
+            </p>
+          )}
+          {info.location && (
+            <p>
+              <img src={locationIcon} alt="Location" />
+              {isModified ? info.location : "South Lake Tahoe, California"}
+            </p>
+          )}
+          {info.link && (
+            <p>
+              <img src={githubIcon} alt="GitHub" />
+              <a href={info.link}>
+                {isModified ? info.link : "https://github.com/jackNicosia"}
+              </a>
+            </p>
+          )}
         </div>
         <div className="skills-section">
           <h3>Technical Skills</h3>

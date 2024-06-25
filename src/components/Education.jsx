@@ -22,7 +22,7 @@ export default function Education({ info, handleInputChange }) {
         />
       </label>
       <label>
-        Year:
+        Years:
         <input
           type="text"
           name="year"

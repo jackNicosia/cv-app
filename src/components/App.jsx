@@ -125,9 +125,9 @@ To Do
 create max width for cv-page text
 
 
-delete all preview text when any input box is typed into
 
-  only show associated icons if input is typed into
+
+// maybe remove bullets until typed into
 
   style slide bar
 

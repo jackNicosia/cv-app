@@ -42,6 +42,7 @@ button:hover {
 
 .appDiv {
   display: grid;
-  grid-template-columns: 40vw 40vw;
+  grid-template-columns: 40vw 50vw;
   justify-content: center;
+  gap: 5vw;
 }
