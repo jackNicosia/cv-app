@@ -5,6 +5,7 @@ div.cv-page {
   margin-top: 10px;
   color: black;
   grid-template-columns: 60% 40%;
+  height: 100%;
 }
 
 .left-section {
@@ -13,12 +14,13 @@ div.cv-page {
 
 .right-section {
   background-color: rgb(18, 142, 224);
-  padding: 10px;
-  color: rgb(0, 0, 0);
+
+  color: rgb(243, 243, 243);
+  height: 100%;
 }
 
 .cv-page p {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin: 0;
 }
 
@@ -33,6 +35,8 @@ div.cv-page {
 .contact {
   margin-top: 35px;
   margin-right: 20px;
+  margin-left: 20px;
+  color: white;
 }
 .contact p {
   margin-bottom: 15px;
@@ -72,9 +76,40 @@ ul {
 
 h3 {
   text-decoration: underline;
+  align-self: center;
 }
 
 img {
   width: 20px;
   margin-right: 10px;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cv-page {
+  overflow: auto; /* Adds scroll bars if content overflows */
+}
+
+.cv-page .left-section,
+.cv-page .right-section {
+  overflow: hidden; /* Hide overflowed content */
+  text-overflow: ellipsis; /* Add ellipsis (...) for overflowed text */
+  word-wrap: break-word; /* Break long words to fit within the container */
+  white-space: normal; /* Allow text to wrap */
+}
+
+.cv-page .left-section h1,
+.cv-page .left-section p,
+.cv-page .education-section ul,
+.cv-page .work-history ul,
+.cv-page .right-section .contact p,
+.cv-page .skills-section ul {
+  max-width: 100%; /* Ensure elements do not exceed their container's width */
+  overflow: hidden; /* Hide overflowed content */
+  text-overflow: ellipsis; /* Add ellipsis (...) for overflowed text */
+  word-wrap: break-word; /* Break long words to fit within the container */
 }

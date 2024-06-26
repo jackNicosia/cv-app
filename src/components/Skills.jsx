@@ -8,11 +8,11 @@ export default function Skills({
     <div className="skills">
       {info.skills.map((skill, index) => (
         <div key={index} className="skill-input">
-          <button type="button" onClick={() => deleteSkill(index)}>
-            X
-          </button>
-          <label>
-            Skill:
+          <div className="input-container">
+            <button type="button" onClick={() => deleteSkill(index)}>
+              X
+            </button>
+            <label>Skill:</label>
             <input
               type="text"
               name="skill"
@@ -20,7 +20,7 @@ export default function Skills({
               onChange={(e) => handleSkillChange(index, e)}
               className="input-field"
             />
-          </label>
+          </div>
         </div>
       ))}
       <button type="button" onClick={addSkill}>

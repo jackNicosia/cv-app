@@ -42,7 +42,19 @@ button:hover {
 
 .appDiv {
   display: grid;
-  grid-template-columns: 40vw 50vw;
+  grid-template-columns: 30vw 50vw;
+  grid-template-rows: 85vh 5vh;
   justify-content: center;
   gap: 5vw;
+}
+
+.downloadBtns {
+  display: flex;
+  justify-content: space-evenly;
+  grid-column: 1/2;
+}
+
+.downloadBtns button {
+  background-color: #128ee0;
+  width: 10vw;
 }

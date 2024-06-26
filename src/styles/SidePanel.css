@@ -2,14 +2,14 @@ div.sidePanel {
   grid-column: 1/2;
   background-color: rgb(119, 110, 240);
   width: 100%;
-  height: 95vh;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-  scrollbar-color: rgb(137, 11, 175) rgb(60, 175, 241);
+  scrollbar-color: #128ee0 #5d52f0;
   scrollbar-width: thin;
+  height: 100%;
 }
 
 div.personal,
@@ -23,6 +23,11 @@ div.skills {
   align-items: center;
   align-self: center;
   border: 5px solid rgb(0, 0, 0);
+  padding: 10px;
+}
+
+div.skills {
+  margin-bottom: 10px;
 }
 
 label,
@@ -67,4 +72,16 @@ input {
 
 .add-job {
   margin-top: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+.input-container button {
+  margin-right: 10px;
+}
+
+.input-container label {
+  margin-right: 10px;
 }
